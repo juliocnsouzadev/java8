@@ -1,4 +1,4 @@
-package br.com.juliocnsouza.java8.consumer;
+package br.com.juliocnsouza.java8;
 
 import java.util.Arrays;
 import java.util.List;
