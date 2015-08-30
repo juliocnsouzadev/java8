@@ -1,7 +1,6 @@
 package br.com.juliocnsouza.java8.consumer;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -15,7 +14,7 @@ public class FirstConsumerWithLambdas {
         List<String> palavras = Arrays.asList( "julio" , "cesar" , "nunes" ,
                                                "de" , "souza" );
 
-        palavras.sort(( String s1 , String s2 ) -> {
+        palavras.sort( ( String s1 , String s2 ) -> {
             if ( s1.length() < s2.length() ) {
                 return -1;
             }
@@ -23,7 +22,7 @@ public class FirstConsumerWithLambdas {
                 return 1;
             }
             return 0;
-        });
+        } );
 
         palavras.forEach( ( String palavra ) -> {
             System.out.println( palavra );
