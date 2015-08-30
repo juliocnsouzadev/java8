@@ -3,6 +3,7 @@ package br.com.juliocnsouza.java8.stream;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -33,6 +34,17 @@ public class CusosMain {
                 .filter( c -> c.getAlunos() > 50 )
                 .map( Curso :: getAlunos )
                 .forEach( System.out :: println );
+
+        cursos
+                .stream()
+                .mapToInt( Curso :: getAlunos ).average().ifPresent(
+                        System.out :: println );
+
+        cursos = cursos.stream()
+                .filter( c -> c.getAlunos() > 50 )
+                .collect( Collectors.toList() );
+
+        cursos.forEach( c -> System.err.println( c.getNome() ) );
     }
 
     private static Curso getCurso( String nome , int alunos ) {
